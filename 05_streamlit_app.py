@@ -167,7 +167,7 @@ if 'canli_aktif' not in st.session_state:
 st.markdown("""
 <div class="main-header">
     <p class="main-title">🏭 MDF Kalite Tahmin Sistemi</p>
-    <p class="sub-title">Gebze Tesisi | Yapay Zeka Destekli Fire & Kalite Öngörü Platformu | Bitirme Projesi 2025</p>
+    <p class="sub-title">Gebze Tesisi | Yapay Zeka Destekli Fire & Kalite Öngörü Platformu | Bitirme Projesi 2026</p>
 </div>
 """, unsafe_allow_html=True)
 
