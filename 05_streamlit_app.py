@@ -40,44 +40,74 @@ st.set_page_config(
 )
 
 # ─────────────────────────────────────────
-# CSS TEMA
+# ─────────────────────────────────────────
+# ─────────────────────────────────────────
+# CSS TEMA (CANLI VE AÇIK TEMA)
 # ─────────────────────────────────────────
 st.markdown("""
 <style>
-    .main-header {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-        padding: 20px 30px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* 1. Arka planı daha açık ve canlı yapıyoruz */
+    .stApp {
+        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                    url("https://www.izu.edu.tr/images/default-source/aday/izu-de-yasam/ulasim.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
     }
+
+    /* 2. Başlık panelini daha parlak bir lacivert/mavi yapalım */
+    .main-header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
     .main-title {
-        color: #e94560;
-        font-size: 2rem;
+        color: white; /* Başlık bembeyaz olsun */
+        font-size: 2.2rem;
         font-weight: 800;
         margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+    
     .sub-title {
-        color: #a8b2d8;
-        font-size: 0.95rem;
-        margin-top: 5px;
+        color: #e0e7ff;
+        font-size: 1rem;
+        font-weight: 500;
     }
+
+    /* 3. Yazı alanlarını beyaz ve net yapıyoruz (Okunabilirliği artırır) */
+    [data-testid="stVerticalBlock"] {
+        background-color: rgba(255, 255, 255, 0.9); /* Saf beyaz ve az şeffaf */
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* 4. Sidebar (Yan Menü) için daha modern bir görünüm */
+    [data-testid="stSidebar"] {
+        background-color: #f8fafc !important;
+    }
+
     .metric-card {
-        background: #1e2a3a;
+        background: white;
         border-radius: 10px;
         padding: 15px;
-        border-left: 4px solid #e94560;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        border-left: 5px solid #3b82f6;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    .risk-dusuk  { color: #00e676; font-weight: bold; font-size: 1.3rem; }
-    .risk-orta   { color: #ffa726; font-weight: bold; font-size: 1.3rem; }
-    .risk-yuksek { color: #ef5350; font-weight: bold; font-size: 1.3rem; }
-    .risk-kritik { color: #b71c1c; font-weight: bold; font-size: 1.6rem; animation: blink 1s step-start infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-    .stProgress > div > div { background-color: #e94560; }
+
+    /* Risk renklerini de daha canlı yapalım */
+    .risk-dusuk  { color: #10b981; font-weight: bold; }
+    .risk-orta   { color: #f59e0b; font-weight: bold; }
+    .risk-yuksek { color: #ef4444; font-weight: bold; }
+    
+    /* Progress bar rengi */
+    .stProgress > div > div { background-color: #3b82f6; }
 </style>
 """, unsafe_allow_html=True)
-
 # ─────────────────────────────────────────
 # OUTPUT_DIR (göreceli ya da mutlak)
 # ─────────────────────────────────────────
@@ -167,7 +197,7 @@ if 'canli_aktif' not in st.session_state:
 st.markdown("""
 <div class="main-header">
     <p class="main-title">🏭 MDF Kalite Tahmin Sistemi</p>
-    <p class="sub-title">Gebze Tesisi | Yapay Zeka Destekli Fire & Kalite Öngörü Platformu | Bitirme Projesi 2026</p>
+    <p class="sub-title">Gebze Tesisi | Yapay Zeka Destekli Fire & Kalite Öngörü Platformu | Bitirme Projesi 2025</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -505,3 +535,4 @@ elif "Model" in sayfa:
     st.info(f"🎯 Optimal Threshold: **{modeller['threshold']:.3f}** (F1 optimize)")
     st.info(f"📌 Özellik Sayısı: **{len(modeller['features'])}**")
     st.code("\n".join(modeller['features']), language="text")
+
