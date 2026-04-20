@@ -78,12 +78,20 @@ st.markdown("""
         font-weight: 500;
     }
 
-    /* 3. Yazı alanlarını beyaz ve net yapıyoruz (Okunabilirliği artırır) */
-    [data-testid="stVerticalBlock"] {
-        background-color: rgba(255, 255, 255, 0.9); /* Saf beyaz ve az şeffaf */
-        padding: 20px;
+    /* Sayfayı yanlara doğru sonuna kadar açar */
+    .block-container {
+        max-width: 98% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+    }
+
+    /* Slider kutularını beyaz ve geniş yapar */
+    div[data-testid="column"] {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px;
         border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin: 10px 0px;
     }
 
     /* 4. Sidebar (Yan Menü) için daha modern bir görünüm */
