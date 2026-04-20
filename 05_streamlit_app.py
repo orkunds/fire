@@ -322,7 +322,7 @@ if "Manuel" in sayfa:
         with r2:
             st.metric("Karar (Threshold)", f"{modeller['threshold']:.2f}")
         with r3:
-            durum = "🔴 HATALI ÜRÜ" if sonuc['kalite'] == 1 else "✅ KALİTELİ"
+            durum = "🔴 HATALI ÜRÜN" if sonuc['kalite'] == 1 else "✅ KALİTELİ"
             st.metric("Kalite Durumu", durum)
         with r4:
             st.markdown(f"<p class='{css_cls}'>{emoji} {risk_txt}</p>", unsafe_allow_html=True)
