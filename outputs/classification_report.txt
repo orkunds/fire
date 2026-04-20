@@ -1,0 +1,45 @@
+MDF KALİTE TAHMİN SİSTEMİ — KLASİFİKASYON RAPORU
+============================================================
+
+MODEL: XGBoost
+----------------------------------------
+              precision    recall  f1-score   support
+
+Kaliteli (0)     0.9726    0.9987    0.9854       746
+  Hatalı (1)     0.9706    0.6111    0.7500        54
+
+    accuracy                         0.9725       800
+   macro avg     0.9716    0.8049    0.8677       800
+weighted avg     0.9725    0.9725    0.9696       800
+
+
+Optimal Threshold: 0.242
+
+MODEL: RandomForest
+----------------------------------------
+              precision    recall  f1-score   support
+
+Kaliteli (0)     0.9726    0.9987    0.9854       746
+  Hatalı (1)     0.9706    0.6111    0.7500        54
+
+    accuracy                         0.9725       800
+   macro avg     0.9716    0.8049    0.8677       800
+weighted avg     0.9725    0.9725    0.9696       800
+
+
+Optimal Threshold: 0.242
+
+MODEL: ANN
+----------------------------------------
+              precision    recall  f1-score   support
+
+Kaliteli (0)     0.9721    0.9799    0.9760       746
+  Hatalı (1)     0.6875    0.6111    0.6471        54
+
+    accuracy                         0.9550       800
+   macro avg     0.8298    0.7955    0.8115       800
+weighted avg     0.9529    0.9550    0.9538       800
+
+
+Optimal Threshold: 0.242
+
